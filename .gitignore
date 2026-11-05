@@ -1,0 +1,10 @@
+# Contraseñas y configuracion privada
+.env
+
+# Archivos generados por .NET
+bin/
+obj/
+
+# Editor
+.vscode/
+.vs/

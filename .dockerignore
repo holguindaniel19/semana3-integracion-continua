@@ -1,0 +1,10 @@
+# Archivos que Docker NO debe copiar a la imagen
+**/bin/
+**/obj/
+.git
+.github
+.vscode
+.env
+.env.*
+docker-compose.yml
+*.md

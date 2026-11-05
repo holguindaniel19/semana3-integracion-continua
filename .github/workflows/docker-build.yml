@@ -1,0 +1,31 @@
+name: Docker Build
+
+# Se ejecuta en cada push y en cada pull request
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Descargar el codigo del repositorio
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      # 2. Configurar Docker Buildx
+      - name: Configurar Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 3 y 4. Construir la imagen de la API (si falla, el pipeline falla)
+      - name: Construir imagen de la API
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false          # no se publica en Docker Hub
+          tags: api-app:ci
+
+      # 5. Mensaje final si todo salio bien
+      - name: Todo correcto
+        run: echo "La imagen de la API se construyo correctamente"
