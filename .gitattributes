@@ -1,0 +1,4 @@
+# Evita que Windows cambie los saltos de linea de los scripts que corren en Linux (Jenkins)
+* text=auto
+*.sh text eol=lf
+Jenkinsfile text eol=lf
