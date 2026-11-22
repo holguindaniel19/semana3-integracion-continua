@@ -4,7 +4,7 @@ services:
   # Contenedor 2: base de datos PostgreSQL
   database:
     image: postgres:16.4
-    container_name: database
+    container_name: basedatos
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
