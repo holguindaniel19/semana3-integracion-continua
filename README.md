@@ -89,4 +89,5 @@ Si el producto aparece ahí, la API (contenedor 1) guardó el dato en PostgreSQL
 ## 6. Detener
 ```bash
 docker compose down
+Prueba de disparo automático con Jenkins.
 ```
